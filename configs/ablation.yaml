@@ -1,0 +1,81 @@
+# Ablation study configuration - Tests model without confidence calibration
+# This configuration disables the calibration modules to measure their contribution
+
+# Model Configuration
+model:
+  retriever_name: "sentence-transformers/multi-qa-MiniLM-L6-cos-v1"
+  reader_name: "deepset/roberta-base-squad2"
+  confidence_threshold: 0.5
+  max_seq_length: 512
+  retrieval_top_k: 10
+  answer_max_length: 100
+
+# Training Configuration
+training:
+  batch_size: 16
+  learning_rate: 0.00002
+  num_epochs: 10
+  warmup_steps: 1000
+  weight_decay: 0.01
+  gradient_clip_norm: 1.0
+  save_steps: 1000
+  eval_steps: 500
+  logging_steps: 100
+  early_stopping_patience: 3
+
+# Calibration Configuration - DISABLED FOR ABLATION
+# This tests the impact of removing calibration components
+calibration:
+  temperature_scaling: false  # Disabled to test raw model confidence
+  platt_scaling: false        # Disabled to test raw model confidence
+  isotonic_regression: false  # Disabled to test raw model confidence
+  confidence_bins: 10
+
+# Data Configuration
+data:
+  squad_v2_path: "squad_v2"
+  ms_marco_path: "ms_marco"
+  train_size: -1  # -1 for full dataset
+  val_size: -1
+  test_size: -1
+  max_passages_per_question: 10
+  passage_max_length: 200
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "exact_match"
+    - "f1_score"
+    - "answerability_auroc"
+    - "retrieval_mrr@10"
+    - "calibration_ece"
+  target_metrics:
+    exact_match: 0.78
+    f1_score: 0.85
+    answerability_auroc: 0.92
+    retrieval_mrr_at_10: 0.35
+    calibration_ece: 0.05
+
+# Infrastructure Configuration
+infrastructure:
+  device: "auto"  # auto, cpu, cuda
+  mixed_precision: true
+  num_workers: 4
+  pin_memory: true
+
+# MLflow Configuration
+mlflow:
+  experiment_name: "adaptive-retrieval-qa-ablation"
+  tracking_uri: "./mlruns"
+  log_artifacts: true
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# Paths
+paths:
+  data_dir: "./data"
+  model_dir: "./models/ablation_model"
+  checkpoint_dir: "./checkpoints/ablation"
+  log_dir: "./logs/ablation"
