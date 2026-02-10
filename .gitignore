@@ -1,0 +1,121 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pth
+*.pt
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# MLflow
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Outputs
+outputs/
+
+# Data
+/data/
+*.csv
+*.json
+*.jsonl
+*.tsv
+
+# Models
+/models/
+/checkpoints/
+
+# Logs
+logs/
+*.log
+
+# Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training artifacts (too large for GitHub)
+checkpoints/
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+outputs/
+mlruns/
+mlflow.db
+data/*.bin
+data/*.arrow
+data/*.parquet
+data/*.h5
+data/*.hdf5
+data/*.csv
+data/*.json
+data/*.pkl
+data/raw/
+data/processed/
+htmlcov/
+*.pt
+*.pth
+*.bin
+*.safetensors
+wandb/
+venv/
+.venv/
+
+
+# Auto-added by publisher
+# Training artifacts (auto-added by publisher)
+*.pkl
+*.h5
+*.onnx
