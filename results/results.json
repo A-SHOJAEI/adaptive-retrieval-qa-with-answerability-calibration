@@ -1,0 +1,36 @@
+{
+  "model": "Adaptive Retrieval QA with Answerability Calibration",
+  "dataset": "SQuAD 2.0",
+  "task": "Retrieval-Augmented QA with Answerability Detection",
+  "training_config": {
+    "qa_model": "deepset/roberta-base-squad2",
+    "retriever": "sentence-transformers/multi-qa-MiniLM-L6-cos-v1",
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "warmup_steps": 1000,
+    "total_steps": 3000,
+    "mixed_precision": "FP16",
+    "hardware": "NVIDIA RTX 4090",
+    "training_time_minutes": 13
+  },
+  "best_checkpoint": {
+    "step": 1500,
+    "validation_loss": 0.4539,
+    "answerability_accuracy": 0.8157
+  },
+  "final_checkpoint": {
+    "step": 3000,
+    "validation_loss": 0.4805,
+    "answerability_accuracy": 0.8172
+  },
+  "training_progression": [
+    {"step": 500, "validation_loss": 0.7899, "answerability_accuracy": 0.5007},
+    {"step": 1000, "validation_loss": 0.4689, "answerability_accuracy": 0.7990},
+    {"step": 1500, "validation_loss": 0.4539, "answerability_accuracy": 0.8157},
+    {"step": 2000, "validation_loss": 0.4597, "answerability_accuracy": 0.8142},
+    {"step": 2500, "validation_loss": 0.5483, "answerability_accuracy": 0.7963},
+    {"step": 3000, "validation_loss": 0.4805, "answerability_accuracy": 0.8172}
+  ]
+}

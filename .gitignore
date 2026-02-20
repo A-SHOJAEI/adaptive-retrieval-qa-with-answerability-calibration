@@ -22,6 +22,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.pyc
 
 # PyTorch
 *.pth
@@ -48,15 +49,11 @@ mlflow.db
 outputs/
 
 # Data
-/data/
-*.csv
-*.json
-*.jsonl
-*.tsv
+data/
 
 # Models
 /models/
-/checkpoints/
+checkpoints/*.pth
 
 # Logs
 logs/
@@ -86,37 +83,14 @@ coverage.xml
 Thumbs.db
 
 # Training artifacts (too large for GitHub)
-checkpoints/
-models/*.pt
-models/*.pth
-models/*.bin
-models/*.safetensors
-outputs/
-mlruns/
-mlflow.db
-data/*.bin
-data/*.arrow
-data/*.parquet
-data/*.h5
-data/*.hdf5
-data/*.csv
-data/*.json
-data/*.pkl
-data/raw/
-data/processed/
-htmlcov/
-*.pt
-*.pth
 *.bin
 *.safetensors
-wandb/
-venv/
-.venv/
-
-
-# Auto-added by publisher
-# Training artifacts (auto-added by publisher)
 *.pkl
 *.h5
 *.onnx
-*.pyc
+wandb/
+
+# Results - include results directory
+!results/
+!results/results.json
+!results/training_metrics.json
