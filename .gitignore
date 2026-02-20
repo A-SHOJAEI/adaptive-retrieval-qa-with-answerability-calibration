@@ -53,7 +53,7 @@ data/
 
 # Models
 /models/
-checkpoints/*.pth
+checkpoints/
 
 # Logs
 logs/

@@ -1,0 +1,57 @@
+{
+  "training_metrics": {
+    "best_checkpoint": {
+      "step": 1500,
+      "validation_loss": 0.4539,
+      "answerability_accuracy": 0.8157
+    },
+    "final_checkpoint": {
+      "step": 3000,
+      "validation_loss": 0.4805,
+      "answerability_accuracy": 0.8172
+    },
+    "training_progression": [
+      {
+        "step": 500,
+        "validation_loss": 0.7899,
+        "answerability_accuracy": 0.5007
+      },
+      {
+        "step": 1000,
+        "validation_loss": 0.4689,
+        "answerability_accuracy": 0.7990
+      },
+      {
+        "step": 1500,
+        "validation_loss": 0.4539,
+        "answerability_accuracy": 0.8157
+      },
+      {
+        "step": 2000,
+        "validation_loss": 0.4597,
+        "answerability_accuracy": 0.8142
+      },
+      {
+        "step": 2500,
+        "validation_loss": 0.5483,
+        "answerability_accuracy": 0.7963
+      },
+      {
+        "step": 3000,
+        "validation_loss": 0.4805,
+        "answerability_accuracy": 0.8172
+      }
+    ],
+    "training_info": {
+      "dataset": "SQuAD 2.0",
+      "train_samples": 5000,
+      "val_samples": 1000,
+      "batch_size": 16,
+      "learning_rate": 2e-05,
+      "warmup_steps": 1000,
+      "total_steps": 3000,
+      "training_time_minutes": 13,
+      "hardware": "NVIDIA RTX 4090"
+    }
+  }
+}
